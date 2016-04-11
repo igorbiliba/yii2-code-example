@@ -1,0 +1,33 @@
+<?php
+return [
+    'components' => [
+        'urlManager' => [
+            'rules' => [
+                '/acms/modules/{moduleName}/settings/index' => '/{moduleName}/settings/index',
+            ],
+        ],
+    ],
+    'params' => [
+        /*'post_events' => [//список почтовых событий
+            '{moduleName}_registration' => [//тип события
+                'variables' => [//переменные в шаблон
+                    'username',
+                    'login',
+                ],
+                'title' => '{moduleName}_post_event_registration'//имя для мультиязычности
+            ],
+        ],*/
+        //статические переводы
+        'translate' => [
+            '{moduleName}' => [
+                'ru-RU' => 'Мой модуль',
+            ],
+            '{moduleName}_{widgetName}' => [
+                'ru-RU' => 'Мой виджет',
+            ],
+            '{moduleName}_settings' => [
+                'ru-RU' => 'Настройки',
+            ],
+        ],
+    ],
+];

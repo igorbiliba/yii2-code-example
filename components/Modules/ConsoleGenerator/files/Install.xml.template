@@ -1,0 +1,26 @@
+<!--
+        #Файл конгигурации для установки модуля#
+    В случае отсутствия файла конфигурации в модуле,
+    модуль считается системным и не подвевежден влиянию админки.
+    Миграции к такому модулю находятся в корне проекта.
+    Модели с базовым функционалом к системному модулю модут
+    намодиться в корневой /models.
+-->
+<module name="{moduleName}" version="1.0" sort="1000"><!-- sort: порядок сортировки для отображения модулей в админке -->
+    <!-- Сценарий системы событий установки и удаления модуля (не обязательный) -->
+    <scenario>/modules/{moduleName}/components/Scenario</scenario>
+    <!-- Расположение миграций модуля (не обязательный) -->
+    <migrations>/modules/{moduleName}/migrations</migrations>
+    <!-- Виджеты модуля (не обязательный) -->
+    <widgets>
+        {widget}
+    </widgets>
+    <admin_urls>
+        <{moduleName}_settings>/{moduleName}/settings/index</{moduleName}_settings><!-- (пример настроек). перевод для {moduleName}_settings в конфиге модуля -->
+    </admin_urls>
+    <!-- ссылки на экшены для виртальных страниц (не обязательный) -->
+    <virtual_actions>
+        <!-- список экшенов -->
+        <test-example-link>/test/default/index</test-example-link>
+    </virtual_actions>
+</module>

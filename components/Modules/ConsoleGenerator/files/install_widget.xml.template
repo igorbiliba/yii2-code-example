@@ -1,0 +1,10 @@
+<!-- Виджет -->
+        <widget name="{moduleName}_{widgetName}" class="\app\modules\{moduleName}\components\widgets\{widgetName}\Widget" version="1.0">
+            <!-- Настройки доступности по ролям. если такой роли нету, то она самая появится -->
+            <credentials>
+                <admin>true</admin>
+                <moderator>true</moderator>
+                <user>true</user>
+                <guest>true</guest>
+            </credentials>
+        </widget>

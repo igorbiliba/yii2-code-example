@@ -1,0 +1,26 @@
+<H1>Почтовые события</H1>
+
+<p>
+    Код для регистрации события:
+</p>
+
+<code>
+    \Yii::$app->event->push($to, $type_event, $params)
+</code>
+
+<br /><br />
+<p>
+    Рагистрация почтового события в конфиге:
+</p>
+
+<pre>
+    'post_events' => [//список почтовых событий
+        'module_one_registration' => [//тип события
+            'variables' => [//переменные в шаблон
+                'username',
+                'login',
+            ],
+            'title' => 'module_one_post_event_registration'//имя для мультиязычности
+        ],
+    ],
+</pre>

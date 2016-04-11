@@ -1,0 +1,35 @@
+<!--
+        #Файл конгигурации для установки модуля#
+    В случае отсутствия файла конфигурации в модуле,
+    модуль считается системным и не подвевежден влиянию админки.
+    Миграции к такому модулю находятся в корне проекта.
+    Модели с базовым функционалом к системному модулю модут
+    намодиться в корневой /models.
+-->
+<module name="module_one" version="1.0" sort="1000"><!-- sort: порядок сортировки для отображения модулей в админке -->
+    <!-- Сценарий системы событий установки и удаления модуля (не обязательный) -->
+    <scenario>/modules/module_one/components/Scenario</scenario>
+    <!-- Расположение миграций модуля (не обязательный) -->
+    <migrations>/modules/module_one/migrations</migrations>
+    <!-- Виджеты модуля (не обязательный) -->
+    <widgets>
+        <!-- Виджет -->
+        <widget name="module_one_widget_one" class="\app\modules\module_one\components\widgets\widget_one\Widget" version="1.0">
+            <!-- Настройки доступности по ролям. если такой роли нету, то она самая появится -->
+            <credentials>
+                <admin>true</admin>
+                <moderator>true</moderator>
+                <user>true</user>
+                <guest>true</guest>
+            </credentials>
+        </widget>
+    </widgets>
+    <admin_urls>
+        <module_one_settings>/module_one/settings/index</module_one_settings><!-- (пример настроек). перевод для module_one_settings в конфиге модуля -->
+    </admin_urls>
+    <!-- ссылки на экшены для виртальных страниц (не обязательный) -->
+    <virtual_actions>
+        <!-- список экшенов -->
+        <test-example-link>/test/default/index</test-example-link>
+    </virtual_actions>
+</module>
